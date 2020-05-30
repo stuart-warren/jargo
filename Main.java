@@ -4,10 +4,10 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-class Hello {
+class Main {
    public static void main(final String[] a) throws IOException, InterruptedException {
       System.out.println("Hello world from Java!");
-      final InputStream input = Hello.class.getResourceAsStream("/out/app");
+      final InputStream input = Main.class.getResourceAsStream("/out/app");
       File temp = File.createTempFile("app", null);
       temp.deleteOnExit();
       Files.copy(input, temp.toPath(), StandardCopyOption.REPLACE_EXISTING);
