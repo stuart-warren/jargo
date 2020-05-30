@@ -14,7 +14,8 @@ class Main {
       temp.setExecutable(true);
       input.close();
 
-      ProcessBuilder pb = new ProcessBuilder(temp.getAbsolutePath());
+      String[] args = {temp.getAbsolutePath()};
+      ProcessBuilder pb = new ProcessBuilder(args);
       pb.inheritIO();
       Process process = pb.start();
       System.exit(process.waitFor());
